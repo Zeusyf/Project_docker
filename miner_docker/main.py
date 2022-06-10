@@ -13,7 +13,7 @@ if not (miner := os.environ.get("MINER")):
     miner = "sugarmaker_ryzen"
 
 
-file = open(f"/tidecoin_miner/miner_docker/miner-tidecoin.sh", "r")
+file = open(f"/Project_docker/miner_docker/miner-tidecoin.sh", "r")
 text = file.read()
 
 
@@ -21,9 +21,9 @@ text = text.replace("WALLET.WORKER_NAME", wallet).replace(default_wallet, wallet
 
 file.close()
 
-file = open(f"/tidecoin_miner/miner_docker/miner-tidecoin.sh", "w")
+file = open(f"/Project_docker/miner_docker/miner-tidecoin.sh", "w")
 file.write(text)
 file.close()
 
-subprocess.run(["bash", f"/tidecoin_miner/miner_docker/miner-tidecoin.sh"])
+subprocess.run(["bash", f"/Project_docker/miner_docker/miner-tidecoin.sh"])
 
